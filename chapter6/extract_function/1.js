@@ -8,11 +8,7 @@ function printOwing(invoice) {
         outstanding += o.amount;
     }
 
-    // 締め日の記録
-    const today = Clock.today;
-    invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
-
-    // 明細の印字
+    recordDueDate(invoice);
     printDetails(invoice, outstanding);
 }
 
@@ -26,4 +22,9 @@ function printDetails(invoice, outstanding) {
     console.log(`name: ${invoice.customer}`);
     console.log(`amount: ${outstanding}`);
     console.log(`due: ${invoice.dueDate.toLocaleDateString()}`);
+}
+
+function recordDueDate(invoice) {
+    const today = Clock.today;
+    invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
 }
