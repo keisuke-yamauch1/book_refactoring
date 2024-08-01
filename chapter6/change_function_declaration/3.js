@@ -1,5 +1,6 @@
 function isNewEngland(aCustomer) {
-    return ["MA", "CT", "ME", "VT", "NH", "RI"].includes(aCustomer.address.state);
+    const state = aCustomer.address.state;
+    return ["MA", "CT", "ME", "VT", "NH", "RI"].includes(state);
 }
 
 // caller
