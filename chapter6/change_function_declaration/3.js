@@ -1,6 +1,5 @@
 function isNewEngland(aCustomer) {
-    const state = aCustomer.address.state;
-    return xxNEWinNewEngland(state);
+    return xxNEWinNewEngland(aCustomer.address.state);
 }
 
 function xxNEWinNewEngland(stateCode) {
