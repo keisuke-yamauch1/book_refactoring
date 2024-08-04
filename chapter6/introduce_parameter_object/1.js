@@ -14,7 +14,8 @@ function readingOutsideRange(station, min, max, range) {
 }
 
 // caller
-alerts = readingOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, null);
+const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+alerts = readingOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, range);
 
 class NumberRange {
     constructor(min, max) {
