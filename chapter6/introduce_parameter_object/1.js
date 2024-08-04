@@ -9,8 +9,8 @@ const station = {
     ]
 };
 
-function readingOutsideRange(station, min, max, range) {
-    return station.readings.filter(r => r.temp < min || r.temp > max);
+function readingOutsideRange(station, min, range) {
+    return station.readings.filter(r => r.temp < min || r.temp > range.max);
 }
 
 // caller
