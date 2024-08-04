@@ -10,7 +10,7 @@ const station = {
 };
 
 function readingOutsideRange(station, range) {
-    return station.readings.filter(r => r.temp < range.min || r.temp > range.max);
+    return station.readings.filter(r => !range.contains(r.temp));
 }
 
 // caller
@@ -23,4 +23,6 @@ class NumberRange {
     }
     get min() { return this._data.min; }
     get max() { return this._data.max; }
+
+    contains(arg) { return (arg >= this.min && arg <= this.max); }
 }
